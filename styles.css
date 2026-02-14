@@ -1,0 +1,79 @@
+:root {
+    --primary: #2975D9;
+    --secondary: #5BA9D9;
+    --accent: #011046;
+    --background: #B6DBF2;
+}
+* {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+body {
+    display: flex;
+    min-width: 50rem;
+    padding: 0 8rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background-color: var(--background);
+}
+header {
+    display: flex;
+    padding: 2rem 1.875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+h1 {
+    flex: 1 0 0;
+    color: #000000;
+    text-align: center;
+    text-shadow: 5px 5px 0 rgba(1, 16, 70, 0.15);
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: stretch;
+}
+menu {
+    display: flex;
+    height: 8.0625rem;
+    width: 34rem;
+    padding: 0 3.125rem;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    row-gap: 0.625rem;
+    align-self: center;
+    flex-wrap: wrap;
+}
+main div {
+    height: 34rem;
+    align-self: stretch;
+    aspect-ratio: 1/1;
+    background-color: #ffffff;
+    box-shadow: 7px 7px 0 0 var(--accent);
+}
+footer {
+    display: flex;
+    padding: 3.125rem 1.875rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+}
+/* bellow is for menu */
+menu button {
+    display: flex;
+    width: 4.3125rem;
+    height: 4.3125rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 0.3125rem;
+    border-right: 5px solid var(--accent);
+    border-bottom: 5px solid var(--accent);
+    background: var(--primary);
+}
