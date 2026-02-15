@@ -28,15 +28,16 @@ function newBox(n) {
     }
 }
 function changeCanvas(x) {
-    createBoxes(x);
-    addBoxes(x);
-}
-function createBoxes(x) {
     const grid = document.querySelector("#canvas");
     grid.replaceChildren();
     for (let i = 0; i < x; i++) {
         const column = document.createElement("div");
-        column.classList.add("box");
+        column.classList.add("column");
         grid.appendChild(column);
+        for (let j = 0; j < x; j++) {
+            const row = document.createElement("div");
+            row.classList.add("box");
+            column.appendChild(row);
+        }
     }
 }
