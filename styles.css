@@ -18,7 +18,7 @@ body {
 header {
     display: flex;
     width: 34rem;
-    padding: 2rem 1.875rem;
+    padding: 1rem 1.875rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
@@ -28,6 +28,7 @@ h1 {
     flex: 1 0 0;
     color: #000000;
     text-align: center;
+    margin: 1rem;
     text-shadow: 5px 5px 0 rgba(1, 16, 70, 0.15);
     font-size: 2.5rem;
     font-style: normal;
@@ -40,7 +41,7 @@ menu {
     height: fit-content;
     width: 34rem;
     padding: 0;
-    margin: 2rem;
+    margin: 1rem;
     justify-content: space-between;
     align-items: center;
     align-content: center;
@@ -127,17 +128,25 @@ svg {
     aspect-ratio: 1/1;
     background-color: #ffffff;
     box-shadow: 7px 7px 0 0 var(--accent);
-    display: grid;
-    grid-auto-columns: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
     gap: 0;
 }
-.box, .newGrid {
+.newBox {
     height: fit-content;
     width: auto;
     background-color: red;
     aspect-ratio: 1/1;
 }
-.newGrid:hover {
+.newBox:hover {
     background-color: blue;
 }
 /* Change everything so we don't use grid */
+.box {
+    height: fit-content;
+    width: auto;
+    background-color: lime;
+    flex-grow: 1;
+    aspect-ratio: 1/1;
+}

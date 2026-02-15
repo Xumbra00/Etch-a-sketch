@@ -1,33 +1,4 @@
-function canvas(x){
-    let rows = 4; // Isn't set up yet
-}
-const clickMe = document.querySelectorAll("button"); // Remember to delete this nigga
-clickMe.forEach(btn => {
-    btn.onclick = () => {
-        const grid = document.getElementById("canvas");
-        const newGrid = document.createElement("div");
-        newGrid.classList.add("newGrid");
-        grid.appendChild(newGrid);
-   }
-});
-// function createBoxes(x) {
-//     const grid = document.querySelector("#canvas");
-//     grid.replaceChildren();
-//     grid.style.gridTemplateColumns = `repeat(${x}, 1fr)`;
-
-function addBoxes(x) {
-    for (let i = 0; x**2; i++) {
-        const grid = document.querySelector("#canvas");
-        const box = document.createElement("div");
-        box.classList.add("box");
-        grid.appendChild(box);
-    }
-}
-function changeCanvas(x) {
-    createBoxes(x);
-    addBoxes(x);
-}
-oninput = () => {
+function getInput() {
     const input = document.querySelector("input"); // change this for input (think about $)
     const menuContainer = document.querySelector(".menuContainer");
     menuContainer.removeChild(menuContainer.lastChild);
@@ -36,20 +7,36 @@ oninput = () => {
     nigga.textContent = inputValue;
     menuContainer.appendChild(nigga);
 }
-
+oninput = () => {
+    getInput();
+}
+onload = () => {
+    getInput();
+}
+const clickMe = document.querySelectorAll("button"); // Remember to delete this nigga
+clickMe.forEach(btn => {
+    btn.onclick = () => {
+        newBox(1);
+   }
+});
+function newBox(n) {
+    for (let i = 0; i < n; i++) {
+        const grid = document.getElementById("canvas");
+        const newBox = document.createElement("div");
+        newBox.classList.add("newBox");
+        grid.appendChild(newBox);
+    }
+}
+function changeCanvas(x) {
+    createBoxes(x);
+    addBoxes(x);
+}
 function createBoxes(x) {
-    let grid = document.querySelector("#canvas");
+    const grid = document.querySelector("#canvas");
     grid.replaceChildren();
     for (let i = 0; i < x; i++) {
-        let column = document.createElement("div");
-        column.classList.add("column");
-        for (let j = 0; i <= x; j++) {
-            let row = document.createElement("div");
-            row.classList.add("row");
-            row.style.border = "2px solid black";
-            row.innerText = (i*x) + j;
-            column.appendChild(row);
-        }
+        const column = document.createElement("div");
+        column.classList.add("box");
         grid.appendChild(column);
     }
 }
