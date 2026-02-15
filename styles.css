@@ -159,7 +159,21 @@ svg {
     width: auto;
     background-color: orange;
     flex-grow: 1;
+    border: 1px solid rgba(199, 199, 199, 0.5);
 }
 .box:hover {
     background-color: lightgray;
+}
+.box:active {
+    background-color: cyan;
+}
+.clicked {
+    background-color: black;
+}
+
+
+.clickMe {
+    width: 150px;
+    aspect-ratio: 1/1;
+    background-color: red;
 }

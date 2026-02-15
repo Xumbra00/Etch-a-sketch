@@ -6,19 +6,14 @@ function getInput() {
     const nigga = document.createElement("p");
     nigga.textContent = inputValue;
     menuContainer.appendChild(nigga);
+    return input.value;
 }
 oninput = () => {
-    getInput();
+    changeCanvas(getInput());
 }
 onload = () => {
-    getInput();
+    changeCanvas(getInput());
 }
-const clickMe = document.querySelectorAll("button"); // Remember to delete this nigga
-clickMe.forEach(btn => {
-    btn.onclick = () => {
-        newBox(1);
-   }
-});
 function newBox(n) {
     for (let i = 0; i < n; i++) {
         const grid = document.getElementById("canvas");
@@ -41,3 +36,11 @@ function changeCanvas(x) {
         }
     }
 }
+// const box = document.getElementsByClassName("box"); // Remember to delete this nigga
+// box.forEach(div => {
+//     div.onclick = () => {
+//         const k = getElementsByClassName();
+//         console.log(k);
+//    }
+// });
+
