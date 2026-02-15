@@ -19,9 +19,24 @@ clickMe.forEach(btn => {
    }
 });
 
-
-
-
+function createBoxes(x) {
+    const grid = document.querySelector("#canvas");
+    grid.replaceChildren();
+    grid.style.gridTemplateColumns = `repeat(${x}, 1fr)`;
+}
+function addBoxes(x) {
+    for (let i = 0; x**2; i++) {
+        const grid = document.querySelector("#canvas");
+        const box = document.createElement("div");
+        box.classList.add("box");
+        grid.appendChild(box);
+    }
+}
+function changeCanvas(x) {
+    createBoxes(x);
+    addBoxes(x);
+}
+    
 
 
 
@@ -34,3 +49,6 @@ function displayValue() {
     chosenValue.textContent = inputValue;
     slider.appendChild(chosenValue);
 }
+
+
+// createBoxes(4);
