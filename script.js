@@ -1,15 +1,7 @@
-// Add here div  constructor function
 function canvas(x){
     let rows = 4; // Isn't set up yet
 }
-
-
-// const grid = document.getElementById("canvas");
-// const newGrid = document.createElement("div");
-// grid.appendChild(newGrid);
-
-
-const clickMe = document.querySelectorAll("button");
+const clickMe = document.querySelectorAll("button"); // Remember to delete this nigga
 clickMe.forEach(btn => {
     btn.onclick = () => {
         const grid = document.getElementById("canvas");
@@ -18,12 +10,11 @@ clickMe.forEach(btn => {
         grid.appendChild(newGrid);
    }
 });
+// function createBoxes(x) {
+//     const grid = document.querySelector("#canvas");
+//     grid.replaceChildren();
+//     grid.style.gridTemplateColumns = `repeat(${x}, 1fr)`;
 
-function createBoxes(x) {
-    const grid = document.querySelector("#canvas");
-    grid.replaceChildren();
-    grid.style.gridTemplateColumns = `repeat(${x}, 1fr)`;
-}
 function addBoxes(x) {
     for (let i = 0; x**2; i++) {
         const grid = document.querySelector("#canvas");
@@ -44,4 +35,21 @@ oninput = () => {
     const nigga = document.createElement("p");
     nigga.textContent = inputValue;
     menuContainer.appendChild(nigga);
+}
+
+function createBoxes(x) {
+    let grid = document.querySelector("#canvas");
+    grid.replaceChildren();
+    for (let i = 0; i < x; i++) {
+        let column = document.createElement("div");
+        column.classList.add("column");
+        for (let j = 0; i <= x; j++) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            row.style.border = "2px solid black";
+            row.innerText = (i*x) + j;
+            column.appendChild(row);
+        }
+        grid.appendChild(column);
+    }
 }
