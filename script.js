@@ -43,4 +43,9 @@ function changeCanvas(x) {
 //         console.log(k);
 //    }
 // });
-
+const grid = document.querySelector("#canvas");
+grid.addEventListener("click", function (e) {
+    this.classList.add("clicked");
+    console.log(this.className); // logs the className of myElement
+//   console.log(e.currentTarget === this); // logs `true`
+});
