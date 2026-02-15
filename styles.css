@@ -5,12 +5,11 @@
     --background: #B6DBF2;
 }
 * {
-    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-family: Inter, Helvetica, Arial, sans-serif;
 }
 body {
     display: flex;
     min-width: 50rem;
-    /* padding: 0 8rem; */
     flex-direction: column;
     align-items: center;
     gap: 0;
@@ -38,9 +37,10 @@ h1 {
 }
 menu {
     display: flex;
-    height: 8.0625rem;
+    height: fit-content;
     width: 34rem;
     padding: 0;
+    margin: 2rem;
     justify-content: space-between;
     align-items: center;
     align-content: center;
@@ -57,7 +57,7 @@ footer {
     gap: 0.05rem;
     align-self: stretch;
 }
-a, h3 {
+a, h3, p {
     padding: 0;
     margin: 7px;
     color: #000000;
@@ -83,7 +83,6 @@ a:hover {
 
     transform: translateY(-2px);
 }
-/* bellow is for menu elements */
 button {
     display: flex;
     width: 4.3125rem;
@@ -93,7 +92,6 @@ button {
     gap: 0.625rem;
     aspect-ratio: 1/1;
     border: none;
-    /* border-radius: 0.3125rem; */
     box-shadow: var(--accent) 5px 5px 0px;
     background: var(--primary);
 }
@@ -123,7 +121,6 @@ input[type="range"]::-webkit-slider-thumb {
 svg {
     fill: var(--accent0);
 }
-/* Everything about our canvas */
 #canvas {
     height: 34rem;
     align-self: stretch;
@@ -131,12 +128,8 @@ svg {
     background-color: #ffffff;
     box-shadow: 7px 7px 0 0 var(--accent);
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-auto-columns: auto;
     gap: 0;
-    /* Penser à un moyen pour que le slider renvoie des carrés */
-    /* On ne doit que prendre des racine en valeur ex 3, 2, 5, etc */
-    /* Use grid template columns property in js */
 }
 .box, .newGrid {
     height: fit-content;

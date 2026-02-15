@@ -36,19 +36,12 @@ function changeCanvas(x) {
     createBoxes(x);
     addBoxes(x);
 }
-    
-
-
-
-
-function displayValue() {
+oninput = () => {
     const input = document.querySelector("input"); // change this for input (think about $)
-    const slider = document.getElementById("slider");
-    let inputValue = input.value;
-    const chosenValue = document.createElement("p");
-    chosenValue.textContent = inputValue;
-    slider.appendChild(chosenValue);
+    const menuContainer = document.querySelector(".menuContainer");
+    menuContainer.removeChild(menuContainer.lastChild);
+    const inputValue = input.value + "x" + input.value;
+    const nigga = document.createElement("p");
+    nigga.textContent = inputValue;
+    menuContainer.appendChild(nigga);
 }
-
-
-// createBoxes(4);
