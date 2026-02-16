@@ -14,14 +14,7 @@ oninput = () => {
 onload = () => {
     changeCanvas(getInput());
 }
-function newBox(n) {
-    for (let i = 0; i < n; i++) {
-        const grid = document.getElementById("canvas");
-        const newBox = document.createElement("div");
-        newBox.classList.add("newBox");
-        grid.appendChild(newBox);
-    }
-}
+
 function changeCanvas(x) {
     const grid = document.querySelector("#canvas");
     grid.replaceChildren();
@@ -30,22 +23,21 @@ function changeCanvas(x) {
         column.classList.add("column");
         grid.appendChild(column);
         for (let j = 0; j < x; j++) {
-            const row = document.createElement("div");
-            row.classList.add("box");
-            column.appendChild(row);
+            const box = document.createElement("div");
+            box.classList.add("box");
+
+            box.addEventListener("mouseover", color);
+
+            // grid.addEventListener("dbclick", function() {
+            //     box.addEventListener("mouseover", color);
+            // });
+            column.appendChild(box);
         }
     }
 }
-// const box = document.getElementsByClassName("box"); // Remember to delete this nigga
-// box.forEach(div => {
-//     div.onclick = () => {
-//         const k = getElementsByClassName();
-//         console.log(k);
-//    }
-// });
-const grid = document.querySelector("#canvas");
-grid.addEventListener("click", function (e) {
+// this below changes the color
+const app = document.getElementById('app');
+function color() {
     this.classList.add("clicked");
-    console.log(this.className); // logs the className of myElement
-//   console.log(e.currentTarget === this); // logs `true`
-});
+}
+// Trouver un moyen d'insérer le bbclick sur le canvas pour un listener dans les box
