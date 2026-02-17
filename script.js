@@ -38,6 +38,13 @@ const rainbow = document.querySelector("#rainbow");
 rainbow.addEventListener("click", nigga);
 
 function nigga() {
-        alert("nigga");
+        // alert("nigga");
         // this function is for rainbow
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+        }
+        console.log(color);
+        return color;
 }
