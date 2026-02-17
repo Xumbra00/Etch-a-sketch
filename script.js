@@ -16,28 +16,28 @@ onload = () => {
 }
 
 function changeCanvas(x) {
-    const grid = document.querySelector("#canvas");
-    grid.replaceChildren();
+    const canvas = document.querySelector("#canvas");
+    canvas.replaceChildren();
     for (let i = 0; i < x; i++) {
         const column = document.createElement("div");
         column.classList.add("column");
-        grid.appendChild(column);
+        canvas.appendChild(column);
         for (let j = 0; j < x; j++) {
             const box = document.createElement("div");
             box.classList.add("box");
-
-            box.addEventListener("mouseover", color);
-
-            // grid.addEventListener("dbclick", function() {
-            //     box.addEventListener("mouseover", color);
-            // });
+            box.addEventListener("mouseover", colored);
             column.appendChild(box);
         }
     }
 }
-// this below changes the color
-const app = document.getElementById('app');
-function color() {
-    this.classList.add("clicked");
+function colored() {
+    this.classList.add("colored");
 }
-// Trouver un moyen d'insérer le bbclick sur le canvas pour un listener dans les box
+
+const rainbow = document.querySelector("#rainbow");
+rainbow.addEventListener("click", nigga);
+
+function nigga() {
+        alert("nigga");
+        // this function is for rainbow
+}

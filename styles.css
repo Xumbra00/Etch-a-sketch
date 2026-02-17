@@ -170,7 +170,7 @@ svg {
 /* .box:active {
     background-color: cyan;
 } */
-.clicked {
+.colored {
     background-color: black;
 }
 .clickMe {
