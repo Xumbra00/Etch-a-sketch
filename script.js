@@ -14,7 +14,6 @@ oninput = () => {
 onload = () => {
     changeCanvas(getInput());
 }
-
 function changeCanvas(x) {
     const canvas = document.querySelector("#canvas");
     canvas.replaceChildren();
@@ -30,28 +29,26 @@ function changeCanvas(x) {
         }
     }
 }
+let color = "#000000";
 function colored() {
-    this.classList.add("colored");
+    this.style.backgroundColor = color;
+    // this.classList.add("colored"); // Deprecated now
 }
-
 const rainbow = document.querySelector("#rainbow");
-rainbow.addEventListener("click", nigga);
-
-function nigga() {
-        // alert("nigga");
-        // this function is for rainbow
+rainbow.addEventListener("click", rainbowMode);
+function rainbowMode() {
         var letters = '0123456789ABCDEF';
-        var color = '#';
+        var choice = '#';
         for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+        choice += letters[Math.floor(Math.random() * 16)];
         }
         console.log(color);
-        return color;y
-        // below is an exemple. change it
-        // let bool = true
-
-        // const changeValue = () => {
-        // bool = !bool
-        // console.log(bool)
-        // }
+        color = choice;
+        return choice;
+}
+// Use changeCanvas(getInput()); for the clear button.
+const wipe = document.querySelector("#clear");
+wipe.addEventListener("click", clear);
+function clear() {
+    changeCanvas(getInput());
 }
