@@ -33,8 +33,8 @@ function changeCanvas(x) {
                     for (var i = 0; i < 6; i++) {
                         choice += letters[Math.floor(Math.random() * 16)];
                     }
-                    color = choice;
-                    this.style.backgroundColor = color;
+                    rainbowColor = choice;
+                    this.style.backgroundColor = rainbowColor;
                 } else {
                     this.style.backgroundColor = color;
                 }
@@ -42,10 +42,6 @@ function changeCanvas(x) {
             column.appendChild(box);
         }
     }
-}
-function colored() {
-    this.style.backgroundColor = chooseColor;
-    // this.classList.add("colored"); // Deprecated now
 }
 const rainbow = document.querySelector("#rainbow");
 rainbow.addEventListener("click", rainbowClick);
@@ -57,16 +53,19 @@ function rainbowClick() { // This function is the boolean switch button status
         rainbowActive = true;
     }
 }
-function rainbowMode() {
-    if (rainbowActive === true) {
-        alert("active");
-        this.style.backgroundColor = chooseColor; // insert this condition in a function ???
-    }
-}
 // Use changeCanvas(getInput()); for the clear button.
 const wipe = document.querySelector("#clear");
 wipe.addEventListener("click", clear);
 function clear() {
     changeCanvas(getInput());
 }
-// Make a boolean button to activate function and use colored function plus randomness to make it work
+const picker = document.querySelector("#colorPicker");
+const input = document.querySelector("#colorInput");
+
+picker.addEventListener("click", () => {
+    input.click();
+});
+input.addEventListener("input", (e) => {
+    color = e.target.value;
+    console.log("new color: ", color);
+});
