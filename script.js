@@ -14,6 +14,7 @@ oninput = () => {
 onload = () => {
     changeCanvas(getInput());
 }
+let color = "#000000";
 function changeCanvas(x) {
     const canvas = document.querySelector("#canvas");
     canvas.replaceChildren();
@@ -24,14 +25,26 @@ function changeCanvas(x) {
         for (let j = 0; j < x; j++) {
             const box = document.createElement("div");
             box.classList.add("box");
-            box.addEventListener("mouseover", colored);
+            // box.addEventListener("mouseover", colored);
+            box.addEventListener("mouseover", function () {
+                if (rainbowActive === true) {
+                    var letters = '0123456789ABCDEF';
+                    var choice = '#';
+                    for (var i = 0; i < 6; i++) {
+                        choice += letters[Math.floor(Math.random() * 16)];
+                    }
+                    color = choice;
+                    this.style.backgroundColor = color;
+                } else {
+                    this.style.backgroundColor = color;
+                }
+            });
             column.appendChild(box);
         }
     }
 }
-let color = "#000000";
 function colored() {
-    this.style.backgroundColor = color;
+    this.style.backgroundColor = chooseColor;
     // this.classList.add("colored"); // Deprecated now
 }
 const rainbow = document.querySelector("#rainbow");
@@ -48,16 +61,6 @@ function rainbowMode() {
     if (rainbowActive === true) {
         alert("active");
         this.style.backgroundColor = chooseColor; // insert this condition in a function ???
-    }
-    function chooseColor() {
-        var letters = '0123456789ABCDEF';
-        var choice = '#';
-        for (var i = 0; i < 6; i++) {
-        choice += letters[Math.floor(Math.random() * 16)];
-        }
-        console.log(color);
-        color = choice;
-        return choice;
     }
 }
 // Use changeCanvas(getInput()); for the clear button.
