@@ -1,14 +1,14 @@
 function getInput() {
-    const input = document.querySelector("input"); // change this for input (think about $)
+    const gridSizer = document.querySelector("#gridSizer"); // change this for input (think about $)
     const menuContainer = document.querySelector(".menuContainer");
     menuContainer.removeChild(menuContainer.lastChild);
-    const inputValue = input.value + "x" + input.value;
+    const inputValue = gridSizer.value + "x" + gridSizer.value;
     const para = document.createElement("p");
     para.textContent = inputValue;
     menuContainer.appendChild(para);
-    return input.value;
+    return gridSizer.value;
 }
-oninput = () => {
+gridSizer.oninput = () => {
     changeCanvas(getInput());
 }
 onload = () => {
@@ -73,8 +73,4 @@ picker.addEventListener("click", () => {
 });
 colorInput.addEventListener("input", (e) => {
     color = e.target.value;
-    console.log("new color: ", color);
 });
-
-const boxes = document.querySelectorAll(".box");
-
