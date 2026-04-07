@@ -35,8 +35,21 @@ function colored() {
     // this.classList.add("colored"); // Deprecated now
 }
 const rainbow = document.querySelector("#rainbow");
-rainbow.addEventListener("click", rainbowMode);
+rainbow.addEventListener("click", rainbowClick);
+let rainbowActive = false;
+function rainbowClick() { // This function is the boolean switch button status
+    if (rainbowActive === true) {
+        rainbowActive = false;
+    } else {
+        rainbowActive = true;
+    }
+}
 function rainbowMode() {
+    if (rainbowActive === true) {
+        alert("active");
+        this.style.backgroundColor = chooseColor; // insert this condition in a function ???
+    }
+    function chooseColor() {
         var letters = '0123456789ABCDEF';
         var choice = '#';
         for (var i = 0; i < 6; i++) {
@@ -45,6 +58,7 @@ function rainbowMode() {
         console.log(color);
         color = choice;
         return choice;
+    }
 }
 // Use changeCanvas(getInput()); for the clear button.
 const wipe = document.querySelector("#clear");
@@ -52,3 +66,4 @@ wipe.addEventListener("click", clear);
 function clear() {
     changeCanvas(getInput());
 }
+// Make a boolean button to activate function and use colored function plus randomness to make it work
