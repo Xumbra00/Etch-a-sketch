@@ -46,5 +46,12 @@ function nigga() {
         color += letters[Math.floor(Math.random() * 16)];
         }
         console.log(color);
-        return color;
+        return color;y
+        // below is an exemple. change it
+        // let bool = true
+
+        // const changeValue = () => {
+        // bool = !bool
+        // console.log(bool)
+        // }
 }
