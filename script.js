@@ -3,9 +3,9 @@ function getInput() {
     const menuContainer = document.querySelector(".menuContainer");
     menuContainer.removeChild(menuContainer.lastChild);
     const inputValue = input.value + "x" + input.value;
-    const nigga = document.createElement("p");
-    nigga.textContent = inputValue;
-    menuContainer.appendChild(nigga);
+    const para = document.createElement("p");
+    para.textContent = inputValue;
+    menuContainer.appendChild(para);
     return input.value;
 }
 oninput = () => {
@@ -14,7 +14,7 @@ oninput = () => {
 onload = () => {
     changeCanvas(getInput());
 }
-let color = "#000000";
+let color = "#2975D9";
 function changeCanvas(x) {
     const canvas = document.querySelector("#canvas");
     canvas.replaceChildren();
@@ -25,6 +25,7 @@ function changeCanvas(x) {
         for (let j = 0; j < x; j++) {
             const box = document.createElement("div");
             box.classList.add("box");
+            box.style.opacity = 1;
             // box.addEventListener("mouseover", colored);
             box.addEventListener("mouseover", function () {
                 if (rainbowActive === true) {
@@ -35,8 +36,13 @@ function changeCanvas(x) {
                     }
                     rainbowColor = choice;
                     this.style.backgroundColor = rainbowColor;
+                    this.style.opacity -= 0.1;
+                    nigga();
                 } else {
                     this.style.backgroundColor = color;
+                    this.style.opacity -= 0.1;
+                    // this.style.opacity = 0;
+                    nigga();
                 }
             });
             column.appendChild(box);
@@ -60,12 +66,15 @@ function clear() {
     changeCanvas(getInput());
 }
 const picker = document.querySelector("#colorPicker");
-const input = document.querySelector("#colorInput");
+const colorInput = document.querySelector("#colorInput");
 
 picker.addEventListener("click", () => {
-    input.click();
+    colorInput.click();
 });
-input.addEventListener("input", (e) => {
+colorInput.addEventListener("input", (e) => {
     color = e.target.value;
     console.log("new color: ", color);
 });
+
+const boxes = document.querySelectorAll(".box");
+
